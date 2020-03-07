@@ -1,7 +1,6 @@
 import React from "react";
 import { drizzleReactHooks } from "@drizzle/react-plugin";
 import { newContextComponents } from "@drizzle/react-components";
-import ParkingSpots from "./ParkingSpots";
 
 const { useDrizzle, useDrizzleState } = drizzleReactHooks;
 const { ContractForm } = newContextComponents;
@@ -12,13 +11,20 @@ export default () => {
 
   return (
     <div>
-      <h2>Parking Spots for Sale</h2>
+      <h2>Sell Parking Spot</h2>
       <ContractForm
         drizzle={drizzle}
-        drizzleState={state}
         contract="Parking"
-        method="getParkingSpots"
-        render={parking => <ParkingSpots parking={parking} />}
+        method="addOpening"
+        labels={[
+          "Beginning Time",
+          "Ending Time",
+          "Head",
+          "Tail",
+          "Space ID",
+          "Opening ID",
+          "Price"
+        ]}
       />
     </div>
   );

@@ -1,28 +1,29 @@
-// import React from "react";
+// import React, { useState, useEffect } from "react";
 // import { drizzleReactHooks } from "@drizzle/react-plugin";
 // import { newContextComponents } from "@drizzle/react-components";
-// import { Typography } from "@material-ui/core";
 
 // const { useDrizzle, useDrizzleState } = drizzleReactHooks;
-// const { AccountData } = newContextComponents;
+// const { ContractData } = newContextComponents;
 
-// const Account = () => {
+// export default () => {
 //   const { drizzle } = useDrizzle();
 //   const state = useDrizzleState(state => state);
 //   return (
 //     <div>
-//       <Typography variant="h4" color="secondary">
-//         Your Account:
-//       </Typography>
-//       <AccountData
+//       <ContractData
 //         drizzle={drizzle}
 //         drizzleState={state}
-//         accountIndex={0}
-//         units="ether"
-//         precision={3}
+//         contract="Parking"
+//         method="addOpening"
+//         methodArgs={[]}
+//         render={spot => {
+//           return (
+//             <div>
+//               <h5>{spot._begTimestamp}</h5>
+//             </div>
+//           );
+//         }}
 //       />
 //     </div>
 //   );
 // };
-
-// export default Account;
