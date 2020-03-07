@@ -9,6 +9,7 @@ import Header from "./Header";
 import Loading from "./Loading.js";
 import SimpleMap from "./Map.js";
 import Account from "./Account.js";
+import Test from "./Testfile.js";
 
 const drizzle = new Drizzle(drizzleOptions);
 const { DrizzleProvider } = drizzleReactHooks;
@@ -23,6 +24,7 @@ const App = () => {
         <DrizzleProvider drizzle={drizzle}>
           <Loading>
             <Account />
+            <Test />
             <SimpleMap />
           </Loading>
         </DrizzleProvider>
