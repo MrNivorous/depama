@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Drizzle } from "@drizzle/store";
+import { drizzleReactHooks } from "@drizzle/react-plugin";
+import "./App.css";
 
-function App() {
+import drizzleOptions from "./drizzleOptions.js";
+
+import Header from "./Header";
+import Loading from "./Loading.js";
+import SimpleMap from "./Map.js";
+import Account from "./Account.js";
+
+const drizzle = new Drizzle(drizzleOptions);
+const { DrizzleProvider } = drizzleReactHooks;
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div className="header">
+        <Header />
+      </div>
+      <div className="app">
+        <DrizzleProvider drizzle={drizzle}>
+          <Loading>
+            <Account />
+            <SimpleMap />
+          </Loading>
+        </DrizzleProvider>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
